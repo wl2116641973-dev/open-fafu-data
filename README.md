@@ -4,8 +4,10 @@
 
 ## 数据文件
 
-- `data/candidates.jsonl`：URL 去重后的 FAFU 专属候选索引（JSON Lines，每行一条）
-- `data/candidates_graded.jsonl`：同上，附加 A/B/C 证据分级
+- `data/candidates/candidates_part_*.jsonl`：URL 去重后的 FAFU 专属候选索引（JSON Lines，每行一条；按行数切分，拼接即得完整 774 条）
+- `data/candidates_graded/graded_part_*.jsonl`：同上，附加 A/B/C 证据分级
+
+注：因上传接口单次大小限制，数据按约 90KB 切分为多个分片。
 
 字段说明：`title` 标题、`course` 课程、`material_type` 类型（试卷/课件/实验资料/复习资料/公开课等）、`source_site` 来源站、`url` 链接、`credibility` 可信度（高/中/低）、`access` 访问方式、`note` 备注、`grade` 证据分级。
 
